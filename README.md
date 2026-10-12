@@ -1,35 +1,29 @@
-This is a Kotlin Multiplatform project targeting Android, iOS, Desktop (JVM).
+# Timetables
+This Version 2 of the older [Timetables App](https://github.com/c4lopsitta/rfi-timetable-scraper) aims
+to be a more complete and stable Timetables app, for Italian Railways, and eventually offering local
+city transit and more features.<br>
 
-* [/iosApp](./iosApp/iosApp) contains an iOS application. Even if you’re sharing your UI with Compose Multiplatform,
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
+A first version of this app rewrite is already in development for [WearOS](https://github.com/c4lopsitta/timetables-wearos).<br>
 
-* [/shared](./shared/src) is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - [commonMain](./shared/src/commonMain/kotlin) is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    the [iosMain](./shared/src/iosMain/kotlin) folder would be the right place for such calls.
-    Similarly, if you want to edit the Desktop (JVM) specific part, the [jvmMain](./shared/src/jvmMain/kotlin)
-    folder is the appropriate location.
+The project will be relatively lengthy as the idea is to fully separate the RFI timetable scraper, 
+Trenitalia Viaggiatreno API bindings, and others.
 
-### Running the apps
+## Planned features
+- [ ] Basic searching and data viewing for railway stations
+- [ ] Cross-operator data integration
+- [ ] Live activities and tracking
+- [ ] WearOS Integrations
+- [ ] Railway strikes and maintenance notifications
 
-Use the run configurations provided by the run widget in your IDE's toolbar. You can also use these commands and options:
+## Possible future features
+The following features are something I will consider after completing the already planned features.
+These might never be implemented due to various limitations or lack of time/being out of scope.
+- [ ] Ticket storage (physical and from user account)
+- [ ] Train condition reporting and stats (delays, cleanliness, rolling stock, etc...)
+- [ ] Route planning and ticket purchase (in app or with links to official websites)
 
-- Android app: `./gradlew :androidApp:assembleDebug`
-- Desktop app:
-  - Hot reload: `./gradlew :desktopApp:hotRun --auto`
-  - Standard run: `./gradlew :desktopApp:run`
-- iOS app: open the [/iosApp](./iosApp) directory in Xcode and run it from there.
+## License
+The project is licensed under the [GNU GPL v3](./COPYING) license.
 
-### Running tests
-
-Use the run button in your IDE's editor gutter, or run tests using Gradle tasks:
-
-- Android tests: `./gradlew :shared:testAndroidHostTest`
-- Desktop tests: `./gradlew :shared:jvmTest`
-- iOS tests: `./gradlew :shared:iosSimulatorArm64Test`
-
----
-
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
+> [!NOTE]
+> This project is not affiliated with Trenitalia, Ferrovie dello Stato, Rete Ferroviaria Italiana, or any other Italian railway operator and/or company.
